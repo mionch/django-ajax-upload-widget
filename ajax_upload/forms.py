@@ -17,7 +17,7 @@ def normalize_polish_chars(text):
 class UploadedFileForm(forms.ModelForm):
     def __init__(self, data=None, files=None, **kwargs):
         for __, uploaded_file in files.iteritems():
-            uploaded_file.name = normalize_polish_chars(file.name)
+            uploaded_file.name = normalize_polish_chars(uploaded_file.name)
         super(UploadedFileForm, self).__init__(data=data, files=files, **kwargs)
 
     class Meta:
